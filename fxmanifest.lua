@@ -34,6 +34,9 @@ local Configuration = {
 local buildType = Configuration.ApplicationType == ApplicationType.Release and 'Release' or 'Debug';
 
 client_script( './Framework.Client/bin/' + buildType + '/Framework.Client.net.dll' );
-server_script( './Framework.Server/bin/' + buildType + '/net6.0/Framework.Server.net.dll' );
+server_script( './Framework.Server/bin/' + buildType + '/netstandard2.0/Framework.Server.net.dll' );
+-- server_script( './Framework.Server/bin/' + buildType + '/net6.0/Newtonsoft.Json.dll' );
+
+file( './Framework.Client/bin/' + buildType + '/Newtonsoft.Json.dll' );
 
 --#endregion
