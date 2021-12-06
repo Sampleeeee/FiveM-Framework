@@ -7,6 +7,6 @@ public class MainServer : BaseScript
 {
     public MainServer()
     {
-        Log.Info( "Hello!" );
+        Log.Info( "Server has started!" );
     }
 }
