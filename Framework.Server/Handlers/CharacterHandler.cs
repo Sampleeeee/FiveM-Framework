@@ -1,6 +1,8 @@
 ﻿using System;
 using CitizenFX.Core;
 using Framework.Shared;
+using Framework.Shared.Inventory;
+using Framework.Shared.Items;
 using Newtonsoft.Json;
 
 namespace Framework.Server.Handlers;
@@ -11,8 +13,6 @@ public class CharacterHandler : BaseScript
     [EventHandler( "PlayerReady" )]
     private void OnPlayerReady( [FromSource] Player player )
     {
-        Log.Info( "Got server event PlayerReady" );
-
         var character = new Character
         {
             FirstName = "Jon",
@@ -26,15 +26,13 @@ public class CharacterHandler : BaseScript
             Gender = Gender.Male,
         };
 
-        string json = JsonConvert.SerializeObject( character );
+        character.ItemInventory = new ItemInventory( character );
+        character.ItemInventory.AddItem( new TestItem(), 1 );
 
-        Log.Info( json );
-        
+        string json = JsonConvert.SerializeObject( character );
         player.TriggerEvent( "SetupCharacter", json );
 
         character.Player = player;
         MainServer.Characters[player] = character;
-
-        Log.Info( "Sent Back Character" );
     }
 }

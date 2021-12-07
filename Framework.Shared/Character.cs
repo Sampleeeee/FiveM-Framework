@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using CitizenFX.Core;
+using Framework.Shared.Inventory;
 using Framework.Shared.JsonConverters;
 using Newtonsoft.Json;
 
@@ -75,7 +76,6 @@ public class Character
     }
 
     #endregion
-    
     #region Character Information
 
     private DateTime _dateOfBirth;
@@ -117,6 +117,18 @@ public class Character
     }
 
     #endregion
+
+    public ItemInventory ItemInventory { get; set; }
+
+    public Character() { }
+    
+    public Character( Player pl, ItemInventory inventory = null )
+    {
+        Player = pl;
+
+        ItemInventory = inventory ?? new ItemInventory( this );
+        ItemInventory.Owner = this;
+    }
 }
 
 public enum Gender
