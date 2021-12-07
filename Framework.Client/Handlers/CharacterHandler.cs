@@ -11,15 +11,7 @@ public class CharacterHandler : BaseScript
     [EventHandler( "SetupCharacter" )]
     private void SetupCharacter( string json )
     {
-        Log.Info( "Got SetupCharacter Event" );
-        
-        Log.Info( json );
-
-        var character = JsonConvert.DeserializeObject<Character>( json, new CharacterJsonConverter() );
-
-        Log.Info( character );
+        var character = JsonConvert.DeserializeObject<Character>( json );
         MainClient.Character = character;
-        
-        Log.Info( "Assigned Character" );
     }
 }
