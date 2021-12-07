@@ -12,6 +12,7 @@ public class CharacterJsonConverter : JsonConverter
 		if ( value is not Character character ) return;
 
 		writer.WriteStartObject();
+		
 		writer.WritePropertyName( "FirstName" );
 		writer.WriteValue( character.FirstName );
 
@@ -47,6 +48,8 @@ public class CharacterJsonConverter : JsonConverter
 
 		writer.WritePropertyName( "Weight" );
 		writer.WriteValue( character.Weight );
+		
+		writer.WriteEndObject();
 	}
 
 	public override object ReadJson( JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer )
