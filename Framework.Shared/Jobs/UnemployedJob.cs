@@ -7,12 +7,14 @@ public class UnemployedJob : BaseJob
 
     public override BaseJobGrade[] JobGrades => new BaseJobGrade[]
     {
-        new Unemployed()
+        new Unemployed( this )
     };
 
     public class Unemployed : BaseJobGrade
     {
         public override string Name => "Unemployed";
         public override int Salary => 50;
+
+        public Unemployed( BaseJob job ) : base( job ) { }
     }
 }

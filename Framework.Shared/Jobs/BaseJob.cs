@@ -13,7 +13,13 @@ public abstract class BaseJob
 public abstract class BaseJobGrade
 {
     public string UniqueId => GetType().FullName;
+    public string JobId { get; set; }
     
     public abstract string Name { get; }
     public abstract int Salary { get; }
+
+    public BaseJobGrade( BaseJob job )
+    {
+        JobId = job.GetType().FullName;
+    }
 }
