@@ -9,9 +9,10 @@ namespace Framework.Client.Handlers;
 public class CharacterHandler : BaseScript
 {
     [EventHandler( "SetupCharacter" )]
-    private void SetupCharacter( string json )
+    private async void SetupCharacter( string json )
     {
         var character = JsonConvert.DeserializeObject<Character>( json );
         MainClient.Character = character;
+        character.Player = Game.Player;
     }
 }
