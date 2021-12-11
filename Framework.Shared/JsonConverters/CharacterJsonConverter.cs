@@ -48,7 +48,13 @@ public class CharacterJsonConverter : JsonConverter
 
 		writer.WritePropertyName( "Weight" );
 		writer.WriteValue( character.Weight );
-		
+
+		writer.WritePropertyName( "Job" );
+		writer.WriteValue( character.Job );
+
+		writer.WritePropertyName( "JobGrade" );
+		writer.WriteValue( character.JobGrade );
+
 		writer.WriteEndObject();
 	}
 

@@ -106,6 +106,9 @@
         <Compile Update="..\Framework.Shared\Jobs\UnemployedJob.cs">
           <Link>Framework.Shared\Jobs\UnemployedJob.cs</Link>
         </Compile>
+        <Compile Update="..\Framework.Shared\JsonConverters\BaseJobJsonConverter.cs">
+          <Link>Framework.Shared\JsonConverters\BaseJobJsonConverter.cs</Link>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="../Framework.Shared/**/*.cs" />
