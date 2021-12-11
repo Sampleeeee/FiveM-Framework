@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using CitizenFX.Core;
 using Framework.Shared.Inventory;
+using Framework.Shared.Jobs;
 using Framework.Shared.JsonConverters;
 using Newtonsoft.Json;
 
@@ -12,7 +13,7 @@ public class Character
 {
     public Player Player { get; set; }
     public Ped Ped => Player.Character;
-    
+
     #region Name
 
     public string FullName => $"{FirstName} {LastName}";
@@ -116,6 +117,12 @@ public class Character
         set => _weight = value;
     }
 
+    #endregion
+    #region Jobs
+    
+    public BaseJob Job { get; set; }
+    public BaseJobGrade JobGrade { get; set; }
+    
     #endregion
 
     public ItemInventory ItemInventory { get; set; }

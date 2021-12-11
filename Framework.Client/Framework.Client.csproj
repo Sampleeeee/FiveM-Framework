@@ -85,6 +85,27 @@
         <Compile Update="..\Framework.Shared\Extensions\KeyValuePairX.cs">
           <Link>Framework.Shared\Extensions\KeyValuePairX.cs</Link>
         </Compile>
+        <Compile Update="..\Framework.Shared\Appearance.cs">
+          <Link>Framework.Shared\Appearance.cs</Link>
+        </Compile>
+        <Compile Update="..\Framework.Shared\Jobs\BaseJob.cs">
+          <Link>Framework.Shared\Jobs\BaseJob.cs</Link>
+        </Compile>
+        <Compile Update="..\Framework.Shared\Jobs\BasePoliceJob.cs">
+          <Link>Framework.Shared\Jobs\BasePoliceJob.cs</Link>
+        </Compile>
+        <Compile Update="..\Framework.Shared\Jobs\PoliceJob.cs">
+          <Link>Framework.Shared\Jobs\PoliceJob.cs</Link>
+        </Compile>
+        <Compile Update="..\Framework.Shared\Jobs\TrooperJob.cs">
+          <Link>Framework.Shared\Jobs\TrooperJob.cs</Link>
+        </Compile>
+        <Compile Update="..\Framework.Shared\Jobs\SheriffJob.cs">
+          <Link>Framework.Shared\Jobs\SheriffJob.cs</Link>
+        </Compile>
+        <Compile Update="..\Framework.Shared\Jobs\UnemployedJob.cs">
+          <Link>Framework.Shared\Jobs\UnemployedJob.cs</Link>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="../Framework.Shared/**/*.cs" />
